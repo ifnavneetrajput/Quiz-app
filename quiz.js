@@ -122,7 +122,7 @@ function createNavigationPanel(){
     const navigationPanel = document.getElementById('navigation-panel')
     navigationPanel.innerHTML =''
 
-    data.forEach((_,index)=>{
+    data.forEach((element,index)=>{
         let navigationButton = document.createElement('button')
         navigationButton.innerText =`${index+1}`
         navigationButton.classList.add('nav-button')
@@ -213,16 +213,23 @@ function endQuiz(){
     document.getElementById('next-button').disabled = true;
     document.getElementById('prev-button').disabled = true;
     document.getElementById('submit-button').disabled = true;
-
+     
+    let correct = 0;
+    let incorrect = 0;
+    let unattempted =0 ;
    selectedAnswers.forEach((answer,index)=>{
         if(answer===data[index].correctAnswer){
             score = score+4
+            correct++
         }else if(answer!==undefined){
             score =score-1;
+            incorrect++
 
+        }else{
+            unattempted++
         }
    })
-   alert(`your final score is :${score}`)
+   alert(`your final score is :${score} || ${correct}-correct | ${incorrect}-incorrect | ${unattempted}-unattempted` )
    createNavigationPanel();
 
 

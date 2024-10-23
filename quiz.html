@@ -9,22 +9,22 @@
 <body>
     <div class="toggle-container">
         <div id="timer-display"></div>
-        <button id="toggleButton">Toggle Dark Mode</button>
+        <button id="toggleButton" tabindex="4">Toggle Dark Mode</button>
       
     </div>
   
     <div id="welcome-message"></div>
 
-    <div id="quiz-container"></div>
+    <div id="quiz-container" tabindex="1"></div>
 
-    <div id="navigation-panel"></div>
+    <div id="navigation-panel" tabindex="3"></div>
     
-    <div id="button-container">
-        <button id="prev-button">Previous</button>
-        <button id="next-button">Next</button>
-        <button id="marked-button">Marked for review</button>
-        <button id="submit-button">End test</button>
-        <button id="restart-button">Restart</button>
+    <div id="button-container" tabindex="2">
+        <button id="prev-button" aria-label="click for Previous question ">Previous</button>
+        <button id="next-button" aria-label="click for Next ">Next</button>
+        <button id="marked-button"aria-label="click for Review again ">Marked for review</button>
+        <button id="submit-button" aria-label="click to end test">End test</button>
+        <button id="restart-button" aria-label="click to Restart test  ">Restart</button>
     </div>
 
     <script src="quiz.js"></script>

@@ -10,11 +10,11 @@
     <div class="login-container">
         <h2>Login</h2>
         <form id="loginForm">
-            <label for="username">Username:</label>
+            <label for="username" tabindex="0">Username:</label>
             <input type="text" id="username" required>
-            <label for="password">Password:</label>
+            <label for="password" tabindex="1">Password:</label>
             <input type="password" id="password" required>
-            <button type="submit">Login</button>
+            <button type="submit"  aria-label="Submit the form" tabindex="2">Login</button>
         </form>
         <div id="message"></div>
     </div>
