@@ -204,12 +204,12 @@ function startTimer(){
 
         timerDisplay.innerText =`${minutes}:${seconds}`
         timerDuration--;
-        if(timerDuration=0){
+        if(timerDuration<=0){
             clearInterval(timerReturn);
             endQuiz();
         }
        
-    },1000)
+    },1000);
 }
 
  
