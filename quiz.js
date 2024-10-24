@@ -33,7 +33,7 @@ function displayQuestion(index){
 
     question.innerHTML =`<h3> Question ${index+1}: ${questionObject.question.text}</h3>`
 
-    //question khatam options suru 
+    //question khatam options suru .optionObject hi option Container h
     let optionObject = document.createElement('div')
     optionObject.classList.add('options')
 
@@ -65,16 +65,18 @@ function displayQuestion(index){
             createNavigationPanel();
 
         })
+
+        
         if (selectedAnswers[index] === 'marked') {
             optionButton.disabled = false;
              
         } else if (selectedAnswers[index] !== undefined) {
           
             if (selectedAnswers[index] === option) {
-                optionButton.style.backgroundColor = '#90EE90'; 
+                optionButton.style.backgroundColor = '#90EE90'; //green
                 optionButton.disabled = true; 
             } else {
-                optionButton.style.backgroundColor = '#FFCCCB'; 
+                optionButton.style.backgroundColor = '#FFCCCB'; //red
                 optionButton.disabled = true; 
             }
         }
@@ -97,7 +99,7 @@ function shuffle(array) {
     }
     return array;
 }
-const toggleButton = document.getElementById('toggleButton');
+let toggleButton = document.getElementById('toggleButton');
 
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
@@ -143,7 +145,7 @@ function createNavigationPanel(){
 function updateNavigationButton(navigationButton, index) {
     
     if (selectedAnswers[index] === 'marked') {
-        navigationButton.style.backgroundColor = '#FFFF00'; 
+        navigationButton.style.backgroundColor = '#FFFF00'; // yellow
     } else if (selectedAnswers[index] === data[index].correctAnswer) {
         navigationButton.style.backgroundColor = '#90EE90'; 
     } else if (selectedAnswers[index] !== undefined) {
@@ -225,11 +227,10 @@ function endQuiz(){
             score =score-1;
             incorrect++
 
-        }else{
-            unattempted++
         }
+        unattempted=10-(correct+incorrect)  
    })
-   alert(`your final score is :${score} || ${correct}-correct | ${incorrect}-incorrect | ${unattempted}-unattempted` )
+   alert(`your final score is : ${score} || ${correct}-correct | ${incorrect}-incorrect | ${unattempted}-unattempted` )
    createNavigationPanel();
 
 
