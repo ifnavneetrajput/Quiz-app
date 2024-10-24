@@ -101,7 +101,7 @@ body.dark-mode .nav-button:hover {
     text-align: center;
     width: fit-content;
     margin: 20px auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    
 }
 .toggle-container {
     display: flex;

@@ -66,7 +66,7 @@ function displayQuestion(index){
 
         })
 
-        
+
         if (selectedAnswers[index] === 'marked') {
             optionButton.disabled = false;
              
@@ -97,7 +97,7 @@ function shuffle(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
-    return array;
+        return array;
 }
 let toggleButton = document.getElementById('toggleButton');
 
@@ -138,17 +138,23 @@ function createNavigationPanel(){
             updateNavigationButton(navigationButton,index);
 
         })
+
         navigationPanel.appendChild(navigationButton)
     })
+    
 }
 
 function updateNavigationButton(navigationButton, index) {
     
     if (selectedAnswers[index] === 'marked') {
         navigationButton.style.backgroundColor = '#FFFF00'; // yellow
-    } else if (selectedAnswers[index] === data[index].correctAnswer) {
+    }
+    
+    else if (selectedAnswers[index] === data[index].correctAnswer) {
         navigationButton.style.backgroundColor = '#90EE90'; 
-    } else if (selectedAnswers[index] !== undefined) {
+    }
+    
+    else if (selectedAnswers[index] !== undefined) {
         navigationButton.style.backgroundColor = '#FFCCCB'; 
     } else {
         navigationButton.style.backgroundColor = '';
@@ -187,7 +193,7 @@ document.getElementById('marked-button').addEventListener('click',markforReview)
 
 //timer
 
-let timerDuration =5*60 ;
+let timerDuration =300;
 let timerDisplay = document.getElementById('timer-display')
 let timerReturn ;
 
@@ -198,7 +204,7 @@ function startTimer(){
 
         timerDisplay.innerText =`${minutes}:${seconds}`
         timerDuration--;
-        if(timerDuration<=0){
+        if(timerDuration=0){
             clearInterval(timerReturn);
             endQuiz();
         }
