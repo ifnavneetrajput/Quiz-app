@@ -141,7 +141,7 @@ function createNavigationPanel(){
 
         navigationPanel.appendChild(navigationButton)
     })
-    
+
 }
 
 function updateNavigationButton(navigationButton, index) {
@@ -193,7 +193,7 @@ document.getElementById('marked-button').addEventListener('click',markforReview)
 
 //timer
 
-let timerDuration =300;
+let timerDuration =5*60;
 let timerDisplay = document.getElementById('timer-display')
 let timerReturn ;
 
